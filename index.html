@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="MyFirstApp.js"></script>
+    <link rel="stylesheet" href="MyFirstApp.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <section class="container-fluid">
+        <div class="sub-container">
+            <div class="row" id="row1">
+                <div class="col-12">
+                    <div class="heading">
+                        <h1>Employee Registration Form</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row get-Info" id="get-info-user">
+                <div class="col-md-6 inputtypes ">
+                    <div class="form">
+                        <label for="name">Enter Full Name</label>
+                        <input type="text" placeholder="Enter Name" id="name" required>
+
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" placeholder="Date of Birth" id="dob" required>
+
+                        <label for="email">Enter Mail-ID</label>
+                        <input type="email" placeholder="abcd@mail.com" id="email" required>
+
+                        <label for="mob">Enter Contact</label>
+                        <input type="text" placeholder="Enter Name" id="mob" required>
+
+                        <select class="select1" id="gender">
+                            <option selected>Select Gender</option>
+                            <option id="gender" value="Male">MALE</option>
+                            <option id="gender" value="Female">FEMALE</option>
+                        </select>
+                        <br>
+                        <select class="select1" id="city">
+                            <option>SELECT CITY..</option>
+                            <option id="city" value="n/a">N/A</option>
+                            <option id="city" value="Pune">Pune</option>
+                            <option id="city" value="Nashik">Nashik</option>
+                            <option id="city" value="Mumbai">Mumbai</option>
+                            <option id="city" value="Nagpur">Nagpur</option>
+                            <option id="city" value="Chatrapati Sambhaji Nagar">Chatrapati Sambhaji Nagar</option>
+                            <option id="city" value="Jalna">Jalna</option>
+                            <option id="city" value="Beed">Beed</option>
+                            <option id="city" value="Solapur">Solapur</option>
+                            <option id="city" value="Goa">Goa</option>
+                            <option id="city" value="Kolhapur">Kolhapur</option>
+                            <option id="city" value="Miraj">Miraj</option>
+                            <option id="city" value="Latur">Latur</option>
+                            <option id="city" value="Shirdi">Shirdi</option>
+                            <option id="city" value="AhmadNagar">AhmadNagar</option>
+                            <option id="city" value="Nanded">Nanded</option>
+                        </select>
+                        <button class="button-48" role="button" onclick="addRowToTable()"><span
+                                class="text">Submit</span></button></td>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <p id="Profile">
+                        <img src="blank profile.png" alt="" />
+                    </p>
+                    <form action="">
+                        <input type="file" accept="image/*" name="" id="image">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="data-display">
+            <table id="table">
+                <tr>
+                    <th class="col-3">Full Name</th>
+                    <th class="col-1">Date Of Birth</th>
+                    <th class="col-3">Email-Id</th>
+                    <th class="col-1">Mobile Number</th>
+                    <th class="col-1">Gender</th>
+                    <th class="col-1">City</th>
+                    <th class="col-1">Profile-Image</th>
+                    <th class="col-3">Select Opration</th>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+</body>
+<script>
+    var mob = document.getElementById("mob");
+    mob.addEventListener('keypress', function (e) {
+        var ch = String.fromCharCode(e.which)
+        if (!(/[0-9]/.test(ch) || mob.value.length == 10)) {
+            e.preventDefault();
+            alert('only numbers and 10 Digits Allowed');
+        }
+    });
+    loadImage();
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+</html>
